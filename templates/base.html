@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+{% block content %}
+
+<ul class="menu">
+    {% for i in menu %}
+    <li>
+        <a href="{{ i.url }}">{{ i.name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+<div class="conteiner">
+    {% if title %}
+    <h1>{{ title }}</h1>
+    {% else %}
+    <h1>Предназначение сайта:</h1>
+    {% endif %}
+</div>
+{% endblock %}
+</body>
+</html>
